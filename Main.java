@@ -1,16 +1,19 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-public class Main extends Exception1 {
-    void msg() throws Exception {
-        System.out.println("child method");
+public class Main {
+    int divide(int m, int n) throws ArithmeticException{
+        int re;
+        re = m/n;
+        return re;
     }
-
-    public static void main(String args[]) {
-        Exception1 e = new Main();
+    public static void main(String args[])
+    {
+        Main m=new Main();
         try {
-            e.msg();
-        } catch (Exception e1) {
+            System.out.println(m.divide(90,0));
         }
+        catch (ArithmeticException e){
+            System.out.println("\n no. cannot be divide");
+        }
+        System.out.println("rest of the code");
+
     }
 }
