@@ -1,31 +1,16 @@
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-public class Main {
-    public static void main(String args[]) {
-           try
-           {
-
-               int result=divide(10,0);
-               System.out.println("result = "+result);
-           }
-           catch(ArithmeticException e)
-           {
-               System.out.println("cannot divide by zero..");
-           }
-           catch (Exception e)
-           {
-               System.out.println("an error ocuured:"+e.getMessage());
-           }
-           finally {
-               System.out.println("program completed");
-           }
+public class Main extends Exception1 {
+    void msg() throws Exception {
+        System.out.println("child method");
     }
-    public static int divide(int n1,int n2) throws ArithmeticException
-    {
-        if (n2==0)
-        {
-            throw new ArithmeticException("cannot be divided");
+
+    public static void main(String args[]) {
+        Exception1 e = new Main();
+        try {
+            e.msg();
+        } catch (Exception e1) {
         }
-        return n1/n2;
     }
 }
